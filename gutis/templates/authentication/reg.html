@@ -33,10 +33,12 @@
 			</div>
 			<div class="input-box">
 				<input
-					type="date"
+					type="text"
 					id="birthdatereg"
 					placeholder="Дата рождения"
 					required
+					onfocus="(this.type='date')"
+					onblur="if(!this.value)this.type='text'"
 				/>
 				<i class="bx bx-calendar"></i>
 			</div>
@@ -46,7 +48,7 @@
 				<input
 					type="email"
 					id="emailreg"
-					placeholder="Введите почту"
+					placeholder="Электронная почта"
 					required
 				/>
 				<i class="bx bxs-envelope"></i>
@@ -57,7 +59,7 @@
 				<input
 					type="password"
 					id="passwordreg"
-					placeholder="Введите пароль"
+					placeholder="Пароль"
 					required
 				/>
 				<i class="bx bxs-lock-alt"></i>
@@ -66,31 +68,34 @@
 				<input
 					type="password"
 					id="password2reg"
-					placeholder="Введите ещё раз пароль"
+					placeholder="Ещё раз"
 					required
 				/>
 				<i class="bx bxs-lock-alt"></i>
 			</div>
 		</div>
+
 		<div class="remember-forgot">
-			<label
-				><input
-					type="checkbox"
-					id="rememberMereg"
-					class="custom-checkbox"
-				/>Запомнить меня</label
-			>
+			<div class="checkbox_rem">
+				<input id='rememberMereg' type='checkbox' class='custom-checkbox'/>
+					<label for='rememberMereg'>
+						<span></span>
+						Запомнить меня
+					</label>
+			</div>
 			<a href="#">Забыли пароль?</a>
 		</div>
+
 		<div class="remember-forgot">
-			<label
-				><input
-					type="checkbox"
-					id="agreeTermsreg"
-					class="custom-checkbox"
-				/>Согласен(а) на обработку моих персональных данных</label
-			>
+			<div class="checkbox_rem">
+				<input id='agreeTermsreg' type='checkbox' class='custom-checkbox'/>
+					<label for='agreeTermsreg'>
+						<span></span>
+						Согласен(а) на обработку данных
+					</label>
+			</div>
 		</div>
+		
 		<button
 			type="submit"
 			id="submitButtonreg"
