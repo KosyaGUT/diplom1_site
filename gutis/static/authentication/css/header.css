@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"); /* Общие стили для header */
+
+/* Стили для тела страницы */
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh; /* Минимальная высота вьюпорта */
+    /* Фоновый цвет */
+	background-size: cover; /* Фон занимает весь экран */
+    /* Центрирование фона */
+    background: black center;
+    height: 100vh;
+    font-family: Roboto, fantasy;
+}
+
+.header {
+    position: fixed;       /* Фиксируем header в верхней части экрана */
+    top: 0;                /* Прижимаем к верхнему краю */
+    left: 0;
+    width: 100%;           /* Растягиваем на всю ширину экрана */
+    text-align: center;    /* Центрируем текст */
+    padding: 10px 0;       /* Внутренние отступы */
+    z-index: 10;           /* Поверх других элементов */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+    color: #e6ebf0;
+}
+
+.header p:first-child{
+    font-size: 12px;
+}
+.header p.head{
+    font-size: 40px;
+}
+
+.header-line {
+    width: 100%;           /* Линия растянута на всю ширину */
+    height: 2px;           /* Толщина линии */
+    border: none;          /* Убираем стандартную границу */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Градиентное угасание */
+    margin: 10px 0;        /* Отступы сверху и снизу */
+}
+
+
+
+/* Стили для footer */
+footer {
+	position: absolute;
+	bottom: 10px;
+	text-align: center; /* Центрирование текста */
+}
+
+/* Стили для текста в footer */
+footer p {
+	color: rgba(255, 255, 255, 0.5); /* Полупрозрачный белый текст */
+	font-size: 12px; /* Размер шрифта */
+}
+
+/*-----------------------------------БОКОВАЯ ПАНЕЛЬ-----------------------------------------*/
+/* Мобильное меню */
+* {
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;  /* Убирает подчеркивание */
+    color: inherit;         /* Наследует цвет от родителя */
+}
+
+a:visited {
+    color: inherit;         /* Для посещенных ссылок убирает фиолетовый цвет */
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.container nav {
+    width: 100px;
+    height: min-content;
+    background: rgba(0, 0, 0, 0.67);
+    padding: 16px;
+    border-radius: 12px;
+    backdrop-filter: blur(18px);
+    border: 2px solid #fc8215;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    transition: 0.6s cubic-bezier(0.8, 0.5, 0.5, 0.8);
+}
+
+
+.container nav:hover {
+    width: 320px;
+}
+
+.container nav .brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container nav .brand img{
+    width: 65px;
+    border-radius: 50%;
+    border: 3px solid #fc8215;
+}
+
+.container nav .brand p {
+    color: #ffffff;
+    text-align: left;
+    line-height: 22px;
+    margin: 0 0 0 12px;
+    transform: translateX(20px);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.container nav .brand p span {
+    color: #ffffff;
+    font-size: 22px;
+    display: block;
+    font-weight: 500;
+}
+
+.container .line {
+    width: 100%;
+    height: 2px;
+    margin: 32px 0;
+    border-radius: 30%;
+    background: #000000;
+}
+
+.container nav .list {
+    width: 100%;
+}
+
+.container nav .list li {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.4s ease-in-out;
+}
+
+.container nav .list li:hover {
+    background: rgba(230, 235, 240, 0.7);
+}
+
+.container nav .list li.active {
+    background: #fc8215;
+}
+
+.container nav .list li i {
+    font-size: 20px;
+    background: linear-gradient(-135deg, #fc8215, #000000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container nav .list li.active i {
+    background: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.container nav .list li span {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0 0 12px;
+    transform: translateX(20px);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.container nav .list li.active span {
+    color: #e6ebf0;
+}
+
+.container nav:hover .brand p,
+.container nav:hover .list li span {
+    animation: anim 0.2s ease-out forwards;
+}
+
+.container nav:hover .brand p {
+    animation-delay: 0.45s;
+}
+
+@keyframes anim {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: unset;
+    }
+}
+
+.container nav:hover .list li:nth-child(1) span {
+    animation-delay: 0.4s;
+}
+.container nav:hover .list li:nth-child(2) span {
+    animation-delay: 0.35s;
+}
+.container nav:hover .list li:nth-child(3) span {
+    animation-delay: 0.3s;
+}
+.container nav:hover .list li:nth-child(4) span {
+    animation-delay: 0.25s;
+}
+.container nav:hover .list li:nth-child(5) span {
+    animation-delay: 0.2s;
+}
+.container nav:hover .list li:nth-child(6) span {
+    animation-delay: 0.15s;
+}
+.container nav:hover .list li:nth-child(7) span {
+    animation-delay: 0.1s;
+}
+
+/* Мобильное меню */
+@media (max-width: 1067px) {
+
+}
+
+/* Основные стили для выпадающих списков */
+.list .dropdown {
+    position: relative;
+}
+
+.list .submenu {
+    position: absolute;
+    left: 100%; /* Смещение вправо от боковой панели */
+    top: 0;
+    display: none; /* Скрываем список по умолчанию */
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    width: 200px;
+    z-index: 10;
+}
+
+.list .dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.submenu li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.submenu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Скрываем боковую панель на мобильных устройствах */
+@media (max-width: 768px) {
+    .container nav {
+        position: fixed;
+        left: -300px; /* Скрываем боковую панель за пределами экрана */
+        top: 0;
+        height: 100vh;
+        width: 300px;
+        transition: left 0.4s ease;
+    }
+
+    .menu-icon {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        font-size: 30px;
+        color: #fc8215;
+        z-index: 20;
+        cursor: pointer;
+    }
+
+    .container.nav-open nav {
+        left: 0; /* Показываем боковую панель */
+    }
+}
+
+.cent {
+    position: absolute;
+    left: 100%;
+    top: -200%;
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+}
+
+.cent1 {
+    position: absolute;
+    left: 100%;
+    top: -355%;
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+}
+
+.cent3 {
+    position: absolute;
+    left: 100%;
+    top: -110%;
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+}
+
+/*----------------------------------------------------------------------------*/

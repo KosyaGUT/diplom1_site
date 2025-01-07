@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'authentication', #регистрация и вход преподавателей
+    'authentication', # Регистрация и вход преподавателей
+    'publication_feed', # Лента публикаций преподавательских методичек
+    'news', # Новости, где будут публиковаться нужные новости
+    'study', # Учеба и все то, что в ней находится
+    'personal', # Личные данные, сообщения и т.д.
+    'library', # Вся информация про методический материал и их поиск
 ]
 
 MIDDLEWARE = [

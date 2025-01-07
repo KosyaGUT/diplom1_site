@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<link rel="stylesheet" href="{% static "authentication/css/header.css" %}" />
+		<link rel="icon" href="{% static "authentication/img/new_logo.svg" %}"
+		type="image/x-icon" />
+        <!--font awesome-->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        {% block head %}{% endblock %}
+		<title>{% block title %}{% endblock %}</title>
+	</head>
+	<body>
+        <div class="header">
+            <b><p>ФГБОУ ВО "СПбГУТ им проф. М. А. Бонч-Бруевича"</p></b>
+            <p class="head">Личный кабинет студента</p>
+            <hr class="header-line">
+        </div>
+{#        <!-- Значок меню для мобильной версии -->#}
+{#        <div class="menu-icon" onclick="toggleSidebar()">☰</div>#}
+
+        <!-- Логотип в левом верхнем углу -->
+        <div class="fixed-logo">
+            <img src="{% static 'authentication/img/new_logo.svg' %}" alt="Логотип">
+        </div>
+
+        <!-- Боковая панель -->
+        <div class="container">
+            <nav>
+                <div class="brand">
+                    <img src="{% static 'authentication/img/profile.png' %}" alt="Логотип" class="logo">
+                    <p>
+                        <span>Доброе утро,</span>
+                        Anonim!
+                    </p>
+                </div>
+
+                <hr class="line">
+
+                <!-- Список меню с выпадающими пунктами -->
+                <ul class="list">
+                    <li>
+                        <i class="fa-solid fa-list"></i>
+                        <span><a href="{% url "publication_feed:pub_feed" %}">Лента</a></span>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-newspaper"></i>
+                        <span><a href="{% url "news:news" %}">Новости</a></span>
+                    </li>
+
+                    <!-- Выпадающий список для "Учёба" -->
+                     <li class="dropdown">
+                        <i class="fas fa-book"></i>
+                        <span>Учёба</span>
+                        <div class="cent">
+                            <ul class="submenu">
+                                <li><a href="{% url 'study:schedule' %}">Расписание</a></li>
+                                <li><a href="{% url 'study:curriculum' %}">Учебный план</a></li>
+                                <li><a href="{% url 'study:student_council' %}">Студенческий совет</a></li>
+                                <li><a href="{% url 'study:group_files' %}">Файлы группы</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Выпадающий список для "Личное" -->
+                    <li class="dropdown">
+                        <i class="fas fa-user"></i>
+                        <span>Личное</span>
+                        <div class="cent1">
+                            <ul class="submenu">
+                                <li><a href="{% url 'personal:my_profile' %}">Мой профиль</a></li>
+                                <li><a href="{% url 'personal:diary' %}">Дневник</a></li>
+                                <li><a href="{% url 'personal:access_to_services' %}">Доступ к сервисам</a></li>
+                                <li><a href="{% url 'personal:ordering_information' %}">Заказ справок</a></li>
+                                <li><a href="{% url 'personal:messages' %}">Сообщения</a></li>
+                                <li><a href="{% url 'personal:technical_support' %}">Тех. поддержка</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Выпадающий список для "Библиотека" -->
+                    <li class="dropdown">
+                        <i class="fas fa-book-open"></i>
+                        <span>Библиотека</span>
+                        <div class="cent3">
+                            <ul class="submenu">
+                                <li><a href="{% url 'library:semester_manuals' %}">Методички на семестр</a></li>
+                                <li><a href="{% url 'library:find_tutorial' %}">Найти методичку</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <hr class="line">
+
+                    <li>
+                        <i class="fas fa-right-from-bracket"></i>
+                        <span>Выйти</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        {% block body %} {% endblock %}
+    </body>
+
+</html>

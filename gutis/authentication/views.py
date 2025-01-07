@@ -2,10 +2,10 @@ from django.shortcuts import render
 
 def index(request):
   context = {
-    'title': 'Главная страница',
+    'title': 'Лента публикаций',
   }
 
-  return render(request, 'authentication/home.html', context)
+  return render(request, 'home/home.html', context)
 
 
 def registration(request):
