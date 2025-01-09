@@ -2,16 +2,31 @@
 
 {% load static %}
 
+{% block head %}
+		<link rel="stylesheet" href="{% static "news/css/news.css" %}" />
+{% endblock %}
+
 {% block title%}
     Новости
 {% endblock %}
 
 {% block body %}
 
+    <div class="news-container">
+        {% for news in news %}
+        <div class="news-item">
+            <h2>{{ news.title }}</h2>
+            <p><strong>Дата публикации:</strong> {{ news.published_date }}</p>
+            <p>{{ news.little_content }}</p>
+            <p><strong>Автор:</strong> {{ news.author }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
 
 <footer>
 	<p>Кабинет Студента/Выпускника/Аспиранта/Сотрудника/Родителя © 2013-2025 СПбГУТ Санкт-Петербургский государственный университет телекоммуникаций им. проф. М.А.Бонч-Бруевича (91.238.229.242)</p>
 </footer>
 
-<script src="{% static "authentication/js/header.js" %}"></script>
+<script src="{% static "base/js/header.js" %}"></script>
 {% endblock %}

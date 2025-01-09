@@ -10,7 +10,7 @@
 		/>
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-		<link rel="stylesheet" href="{% static "authentication/css/header.css" %}" />
+		<link rel="stylesheet" href="{% static "base/css/header.css" %}" />
 		<link rel="icon" href="{% static "authentication/img/new_logo.svg" %}"
 		type="image/x-icon" />
         <!--font awesome-->
@@ -23,17 +23,13 @@
 	</head>
 	<body>
         <div class="header">
-            <b><p>ФГБОУ ВО "СПбГУТ им проф. М. А. Бонч-Бруевича"</p></b>
-            <p class="head">Личный кабинет студента</p>
+            <a href="https://www.sut.ru/"><b><p>ФГБОУ ВО "СПбГУТ им проф. М. А. Бонч-Бруевича"</p></b></a>
+            <p class="head">Личный кабинет студента<br> {{ title }}</p>
+
             <hr class="header-line">
         </div>
 {#        <!-- Значок меню для мобильной версии -->#}
 {#        <div class="menu-icon" onclick="toggleSidebar()">☰</div>#}
-
-        <!-- Логотип в левом верхнем углу -->
-        <div class="fixed-logo">
-            <img src="{% static 'authentication/img/new_logo.svg' %}" alt="Логотип">
-        </div>
 
         <!-- Боковая панель -->
         <div class="container">
