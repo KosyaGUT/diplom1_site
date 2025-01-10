@@ -30,3 +30,82 @@
     border-radius: 20px;
     z-index: -1;
 }
+
+.news-footer {
+    position: absolute;
+    bottom: 0;  /* Фиксируем футер внизу родительского блока */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px 15px;
+}
+
+.read-more-btn {
+    background-color: #fc8215;
+    color: #000000;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more-btn:hover {
+    background-color: #fc8215;
+}
+
+.views-count {
+    font-size: 14px;
+    color: #666;
+}
+
+/*--------------------------------------------CSS для news_id-------------------------------------------*/
+
+.news-container-id {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #ffffff;
+    width: calc(100vw - 220px); /* Уменьшили ширину на 20px */
+    margin: 130px auto;
+    margin-left: 120px; /* Добавили отступ слева */
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+
+.news-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.news-category {
+    display: inline-block;
+    background-color: #fc8215;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.news-content {
+    display: block;
+    gap: 20px;
+}
+
+.news-image {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fc8215;
+    font-weight: bold;
+}

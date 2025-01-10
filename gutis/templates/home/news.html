@@ -19,6 +19,14 @@
             <p><strong>Дата публикации:</strong> {{ news.published_date }}</p>
             <p>{{ news.little_content }}</p>
             <p><strong>Автор:</strong> {{ news.author }}</p>
+            <br>
+            <br>
+            <div class="news-footer">
+                <a href="{% url 'news:news_detail' news.news_id %}" class="read-more-btn">Читать далее</a>
+                <span class="views-count">
+                    <i class="fa fa-eye"></i> {{ news.views }} просмотров
+                </span>
+            </div>
         </div>
         {% endfor %}
     </div>
