@@ -88,9 +88,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gutis_sitedb',
         'USER': 'postgres',
-        'PASSWORD': '6189',
+        'PASSWORD': '61810',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5432'
     }
 }
 
@@ -145,3 +145,7 @@ CKEDITOR_ALLOW_NONIMAGE_FILES = False  # Разрешить только изо�
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Users
+
+AUTH_USER_MODEL = 'authentication.User'
